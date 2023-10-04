@@ -3,6 +3,9 @@ pipeline{
 	tools{
 		maven 'Maven3'
 	}
+	triggers{
+		cron('H/40 * * * *')
+	}
 	stages{
 		stage("Code Checkout"){
 			steps{
@@ -17,6 +20,11 @@ pipeline{
 		stage("Test"){
 			steps{
 				bat "mvn test"
+			}
+		}
+		stage("Deploy"){
+			steps{
+				echo "Deploying the code!"
 			}
 		}
 	}
