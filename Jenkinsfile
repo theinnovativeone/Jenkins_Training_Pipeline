@@ -27,8 +27,7 @@ pipeline{
 	        always {
 			mail to: "guptasneha2099@gmail.com",
             		subject: "Test Email",
-            		body: "Test",
-			attachLog: true
+            		body: "This is a test email which is triggered after the execution of a pipeline job in Jenkins."
 	        }
     	}
 }
